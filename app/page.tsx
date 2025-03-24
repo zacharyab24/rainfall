@@ -1,3 +1,7 @@
+export const metadata = {
+    title: 'Rainfall',
+}
+
 export default function HomePage() {
   return (
     <div>

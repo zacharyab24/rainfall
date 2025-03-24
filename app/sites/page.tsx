@@ -7,6 +7,11 @@ async function getSites() {
     return data?.items as any[];
 }
 
+export const metadata = {
+    title: 'Sites',
+}
+
+
 export default async function SitesPage() {
     const sites = await getSites();
 
