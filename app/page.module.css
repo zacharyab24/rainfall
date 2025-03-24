@@ -166,3 +166,32 @@ a.secondary {
     filter: invert();
   }
 }
+
+/* Navbar container */
+.navbar {
+  background-color: #055163; /* Light grey background */
+  padding: 10px 20px; /* Some padding around the navbar */
+  display: flex; /* Use flexbox for horizontal layout */
+  align-items: center; /* Vertically center items */
+}
+
+/* Navbar links */
+.navbar a {
+  color: #fff; /* White text color */
+  text-decoration: none; /* Remove underline from links */
+  margin: 0 15px; /* Spacing between links */
+  font-size: 1rem; /* Set font size */
+  font-weight: 500; /* Slightly bold for better visibility */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Hover effect for links */
+.navbar a:hover {
+  color: #d3d3d3; /* Light grey color on hover */
+}
+
+/* Optional: style for active links (if you want to highlight the active page) */
+.navbar a.active {
+  color: #007bff; /* Blue color for active link */
+  font-weight: bold; /* Make active link bold */
+}
