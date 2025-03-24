@@ -11,10 +11,10 @@ async function getSite(siteId: string) {
     const data = await res.json();
     return data;
 }
+return (
 
 export default async function SitePage({ params}: any) {
     const site = await getSite(params.id)
-    return (
         <div>
             <h1>{site.name}</h1>
             <AddData siteId={site.id} />
