@@ -2,11 +2,19 @@ package routes
 
 import (
 	"database/sql"
+	"rainfall/api/controllers"
+	"rainfall/api/middlewares"
 
 	"github.com/gin-gonic/gin"
-	"rainfall/api/controllers"
 )
 
 func RegisterRoutes(r *gin.Engine, db *sql.DB) {
-	r.GET("/users", controllers.GetUsers(db))
+	// Public routes
+	r.POST("/auth/register", controllers.Register(db))
+	r.POST("/auth/login", controllers.Login(db))
+
+	// Protected routes
+	protected := r.Group("/api")
+	protected.Use(middlewares.AuthMiddleware())
+	protected.POST("/auth/logout", controllers.Logout())
 }
